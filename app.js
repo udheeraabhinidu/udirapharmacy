@@ -16,7 +16,7 @@ const CustomerSystem = {
         id: 1,
         name: 'Udheera Abhinidu',
         email: 'udheeraabhinidu95@gmail.com',
-        phone: '0772073568',
+        phone: '+94768614828',
         city: 'Anuradhapura',
         role: 'admin',
         registeredDate: '2026-01-15 10:30 AM',
@@ -512,7 +512,7 @@ const AppData = {
     { name: 'Priyantha Pathirana', location: 'Vijayapura, Anuradhapura', date: '2 days ago', text: 'Udira Pharmacy ekata bohoma sthuthi! Dinusha Madhushani pharmacist madam mge prescription eka kiyawala hariyatama beheth tika pack karala duna. Ala Para store ekath godak gathi.', rating: 5, bg: '#0ea5e9', initials: 'PP' },
     { name: 'Dilini Jayasinghe', location: 'Anuradhapura Town', date: 'Yesterday', text: 'Saman Karunarathna uncle ge Udira Pharmacy eken mage amma ge diabetes beheth hamawelawama gannewa. Genuine SPC products thinawa.', rating: 5, bg: '#ec4899', initials: 'DJ' },
     { name: 'Kasun Wickramasinghe', location: 'Kandy', date: 'July 24', text: 'Best pharmacy experience in Sri Lanka! Pharmacist Dinusha madam gave very clear instructions. Highly recommend.', rating: 5, bg: '#8b5cf6', initials: 'KW' },
-    { name: 'Nimali Rathnayake', location: 'Kurunegala', date: 'July 20', text: 'Mage baby ge baby care products & vitamins Udira Pharmacy site eken thmai order kale. Fast delivery & hotline (0772073568)!', rating: 5, bg: '#10b981', initials: 'NR' },
+    { name: 'Nimali Rathnayake', location: 'Kurunegala', date: 'July 20', text: 'Mage baby ge baby care products & vitamins Udira Pharmacy site eken thmai order kale. Fast delivery & hotline (+94768614828)!', rating: 5, bg: '#10b981', initials: 'NR' },
     { name: 'Chathura De Silva', location: 'Panadura', date: 'July 18', text: 'Chief Pharmacist Dinusha is extremely knowledgeable. Saman sir & Udheera brother built a top-class pharmacy system!', rating: 5, bg: '#f59e0b', initials: 'CS' },
     { name: 'Tharindu Wijesinghe', location: 'Vijayapura', date: 'July 15', text: 'Ape pawule okkoma beheth ganne Udira Pharmacy eken. Modern design, clean items, verified brands like Pfizer & GSK.', rating: 5, bg: '#3b82f6', initials: 'TW' }
   ],
@@ -838,18 +838,201 @@ function initMobileMenu() {
   const mobileClose = document.getElementById('mobileClose');
 
   if (toggle && mobileMenu) {
-    toggle.addEventListener('click', () => mobileMenu.classList.add('open'));
+    toggle.addEventListener('click', () => {
+      mobileMenu.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
   }
   if (mobileClose && mobileMenu) {
-    mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    mobileClose.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
   }
-  // Close on link click
   if (mobileMenu) {
-    mobileMenu.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    mobileMenu.querySelectorAll('.nav-link, a, button').forEach(item => {
+      item.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
     });
   }
 }
+
+// ============ HEALTH BLOG SYSTEM ============
+const BlogSystem = {
+  posts: [
+    {
+      id: 'blog-1',
+      title: 'How to Manage Type-2 Diabetes Effectively in Daily Life',
+      category: 'Chronic Care',
+      date: 'July 28, 2026',
+      readTime: '5 min read',
+      author: 'Chief Pharmacist Dinusha Madhushani',
+      icon: '🩺',
+      badge: 'Featured',
+      excerpt: 'Practical advice on monitoring blood glucose, balanced diet strategies, prescription timing, and avoiding common medication mistakes.',
+      content: `
+        <h2>Understanding Type-2 Diabetes Management</h2>
+        <p>Managing Type-2 Diabetes requires a holistic approach combining accurate prescription adherence, daily glucose tracking, and targeted lifestyle habits.</p>
+        <h2>Key Medication Guidelines</h2>
+        <p>Always take Metformin or prescribed oral hypoglycemic agents at regular intervals as advised by your physician. Never alter doses without consulting your chief pharmacist or doctor.</p>
+        <h2>Diet & Physical Activity Tips</h2>
+        <p>Focus on low-glycemic index Sri Lankan foods such as red rice, green leafy vegetables (Kola Kenda), and healthy proteins. Aim for 30 minutes of moderate walking daily.</p>
+        <h2>Stocking Supplies at UDIRA Pharmacy</h2>
+        <p>UDIRA PHARMACY stocks glucometers, blood glucose test strips, and diabetic care accessories for instant local pickup or fast delivery in Anuradhapura.</p>
+      `
+    },
+    {
+      id: 'blog-2',
+      title: 'Essential Vitamin & Supplement Guide for Immunity',
+      category: 'Supplements',
+      date: 'July 25, 2026',
+      readTime: '4 min read',
+      author: 'UDIRA Clinical Team',
+      icon: '💊',
+      badge: 'Wellness',
+      excerpt: 'Boost your immune defense with Vitamin C, Zinc, Vitamin D3, and Omega-3 fatty acids tailored for monsoon seasons.',
+      content: `
+        <h2>Why Immune Boosting Matters</h2>
+        <p>Seasonal weather fluctuations can increase susceptibility to viral infections. High-quality daily multivitamins support immune cell function.</p>
+        <h2>Key Supplements to Consider</h2>
+        <p><strong>Vitamin D3:</strong> Essential for immune regulation.<br><strong>Vitamin C & Zinc:</strong> Helps shorten cold duration.<br><strong>Omega-3:</strong> Supports heart and brain health.</p>
+        <h2>Pharmacist Consultation</h2>
+        <p>Visit UDIRA PHARMACY or contact our hotline (+94 76 861 4828) for personalized dosage advice based on your current health status.</p>
+      `
+    },
+    {
+      id: 'blog-3',
+      title: 'Safe Usage of Antibiotics: What Every Patient Must Know',
+      category: 'Prescription Safety',
+      date: 'July 20, 2026',
+      readTime: '6 min read',
+      author: 'Pharmacist Udheera Abhinidu',
+      icon: '🧬',
+      badge: 'Important',
+      excerpt: 'Why completing your full antibiotic course is crucial to preventing antibiotic resistance and protecting your family.',
+      content: `
+        <h2>The Danger of Antibiotic Resistance</h2>
+        <p>Stopping antibiotics early when symptoms improve allows surviving bacteria to mutate and become resistant to standard treatments.</p>
+        <h2>Essential Safety Rules</h2>
+        <p>1. Never take antibiotics without a valid doctor prescription.<br>2. Always finish the exact prescribed duration.<br>3. Do not share leftover antibiotics with family or friends.</p>
+        <h2>Easy Prescription Upload</h2>
+        <p>Upload your doctor prescription photo to UDIRA PHARMACY online for quick verification and expert advice.</p>
+      `
+    },
+    {
+      id: 'blog-4',
+      title: 'Baby & Child Care: First Aid & Fever Management',
+      category: 'Baby Care',
+      date: 'July 15, 2026',
+      readTime: '5 min read',
+      author: 'Dinusha Madhushani',
+      icon: '👶',
+      badge: 'Parenting',
+      excerpt: 'Safe paracetamol dosage guidelines by age and weight, pediatric hydration, and fever warning signs.',
+      content: `
+        <h2>Managing Childhood Fever Safely</h2>
+        <p>Fever is a natural immune response, but keeping your child comfortable and adequately hydrated is the top priority.</p>
+        <h2>Paracetamol Dosage Guidance</h2>
+        <p>Always verify syrup concentration (e.g. 120mg/5ml vs 250mg/5ml) before administration. Use calibrated measuring syringes rather than household spoons.</p>
+        <h2>When to See a Doctor</h2>
+        <p>If fever exceeds 38.5°C, lasts more than 3 days, or is accompanied by lethargy or rash, seek medical assistance immediately.</p>
+      `
+    },
+    {
+      id: 'blog-5',
+      title: 'Managing High Blood Pressure & Heart Health at Home',
+      category: 'Heart Health',
+      date: 'July 10, 2026',
+      readTime: '4 min read',
+      author: 'UDIRA Clinical Team',
+      icon: '❤️',
+      badge: 'Health',
+      excerpt: 'Tips for digital BP monitor usage at home, dietary sodium reduction, and continuous blood pressure control.',
+      content: `
+        <h2>Accurate Home Blood Pressure Monitoring</h2>
+        <p>Measure your BP at rest, sitting comfortably with back supported. Record morning and evening readings in a logbook.</p>
+        <h2>Lifestyle & Dietary Upgrades</h2>
+        <p>Reduce processed food salt intake, manage daily stress, and keep up with regular cardiovascular checkups.</p>
+      `
+    },
+    {
+      id: 'blog-6',
+      title: 'Seasonal Allergies & Respiratory Health Tips',
+      category: 'Wellness',
+      date: 'July 05, 2026',
+      readTime: '3 min read',
+      author: 'UDIRA Clinical Team',
+      icon: '🌿',
+      badge: 'Seasonal',
+      excerpt: 'How antihistamines, saline nasal sprays, and steam inhalation ease allergic rhinitis and sinus congestion.',
+      content: `
+        <h2>Relieving Allergy Symptoms Quickly</h2>
+        <p>Non-drowsy 2nd generation antihistamines (Cetirizine, Loratadine) effectively relieve sneezing, runny nose, and itchy eyes.</p>
+        <h2>Preventative Steps</h2>
+        <p>Keep indoor dust to a minimum and use nasal saline sprays daily to clear allergens from nasal passages.</p>
+      `
+    }
+  ],
+
+  render() {
+    const grid = document.getElementById('blogGrid');
+    if (!grid) return;
+
+    grid.innerHTML = this.posts.map(post => `
+      <article class="blog-card animate-on-scroll">
+        <div class="blog-card-img">
+          <span>${post.icon}</span>
+          <span class="blog-card-badge">${post.badge}</span>
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-meta">
+            <span>📅 ${post.date}</span>
+            <span>•</span>
+            <span>⏱️ ${post.readTime}</span>
+          </div>
+          <h3 class="blog-card-title">${post.title}</h3>
+          <p class="blog-card-excerpt">${post.excerpt}</p>
+          <button class="blog-read-btn" onclick="BlogSystem.openArticle('${post.id}')">Read Full Article →</button>
+        </div>
+      </article>
+    `).join('');
+  },
+
+  openArticle(id) {
+    const post = this.posts.find(p => p.id === id);
+    if (!post) return;
+
+    const modal = document.createElement('div');
+    modal.className = 'modal-overlay open';
+    modal.id = 'blogArticleModal';
+    modal.innerHTML = `
+      <div class="modal blog-modal">
+        <div class="modal-header">
+          <h3 class="modal-title">${post.icon} ${post.title}</h3>
+          <span class="modal-close" onclick="document.getElementById('blogArticleModal').remove()">&times;</span>
+        </div>
+        <div class="blog-modal-body">
+          <div class="blog-meta" style="margin-bottom:var(--space-4);">
+            <span>✍️ ${post.author}</span>
+            <span>•</span>
+            <span>📅 ${post.date}</span>
+            <span>•</span>
+            <span>⏱️ ${post.readTime}</span>
+          </div>
+          <div>${post.content}</div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" onclick="document.getElementById('blogArticleModal').remove()">Close</button>
+          <a href="prescription.html" class="btn btn-primary">Upload Prescription</a>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+  }
+};
+
 
 // ============ SMOOTH SCROLL & ANIMATION ENGINE ============
 const ScrollEngine = {
@@ -1051,6 +1234,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize Mobile Menu
   initMobileMenu();
 
+  // Initialize Blog System if on blog page
+  BlogSystem.render();
+
   // Initialize Admin Secret Panel (on login page)
   AdminSecretPanel.init();
 
@@ -1071,6 +1257,7 @@ window.ThemeSystem = ThemeSystem;
 window.Inventory = Inventory;
 window.ScrollEngine = ScrollEngine;
 window.AdminSecretPanel = AdminSecretPanel;
+window.BlogSystem = BlogSystem;
 window.showToast = showToast;
 window.openModal = openModal;
 window.closeModal = closeModal;
@@ -1078,3 +1265,4 @@ window.submitPrescription = submitPrescription;
 window.submitContactForm = submitContactForm;
 window.inquireProduct = inquireProduct;
 window.toggleWishlist = toggleWishlist;
+
