@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact UDIRA PHARMACY & GROCERY — 9 Ala Para, Vijayapura, Anuradhapura 50000, Sri Lanka. Owner: Saman Karunarathna, Chief Pharmacist: Dinusha Madhushani. Hotline: 0772073568">
+    <title>Contact Us — UDIRA PHARMACY (Anuradhapura)</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230ea5e9'/><text x='16' y='22' text-anchor='middle' fill='white' font-size='18' font-weight='bold'>U</text></svg>">
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand"><div class="nav-brand-icon">U</div><div class="nav-brand-text">UDIRA <span>PHARMACY</span></div></a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="medicine-finder.html" class="nav-link">Medicine Finder</a>
+                <a href="prescription.html" class="nav-link">Prescriptions</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <div class="lang-switcher"><button class="lang-btn active" data-lang="en">EN</button><button class="lang-btn" data-lang="si">සිං</button><button class="lang-btn" data-lang="ta">தமி</button></div>
+                <button class="theme-toggle" aria-label="Toggle light or dark theme" title="Toggle Light/Dark Theme">
+                    <span class="theme-icon icon-sun">☀️</span>
+                    <span class="theme-icon icon-moon">🌙</span>
+                </button>
+                <a href="login.html" class="btn btn-secondary btn-sm">Sign In</a>
+                <a href="admin.html" class="btn btn-primary btn-sm">Dashboard</a>
+                <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content" style="padding-top:100px;">
+        <section class="section" style="padding-top:var(--space-8);">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">📍 Anuradhapura Location</div>
+                    <h1 class="section-title">Get In Touch</h1>
+                    <p class="section-subtitle">Visit Udira Pharmacy at No. 9 Ala Para, Vijayapura, Anuradhapura</p>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Form -->
+                    <div class="card-glass" style="padding:var(--space-6);">
+                        <h3 style="margin-bottom:var(--space-4);">Send Message to Pharmacist</h3>
+                        <form id="contactForm" onsubmit="submitContactForm(event)">
+                            <div class="form-group">
+                                <label class="form-label">Your Name</label>
+                                <input type="text" id="contactName" class="form-input" placeholder="e.g. Udheera Abhinidu" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" id="contactEmail" class="form-input" placeholder="udheeraabhinidu95@gmail.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Contact Number</label>
+                                <input type="tel" id="contactPhone" class="form-input" placeholder="0772073568" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Message</label>
+                                <textarea id="contactMessage" class="form-textarea" placeholder="Inquire about medicines or prescription orders..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">Send Message (Dispatches Email) →</button>
+                        </form>
+                    </div>
+
+                    <!-- Details & Real Anuradhapura Map Embed -->
+                    <div>
+                        <div class="card" style="margin-bottom:var(--space-5);">
+                            <h3 style="margin-bottom:var(--space-3);color:var(--primary-light);">Udira Pharmacy & Grocery</h3>
+                            <div style="display:flex;flex-direction:column;gap:var(--space-3);">
+                                <div style="display:flex;align-items:center;gap:var(--space-3);">
+                                    <div class="contact-info-icon" style="margin:0;">📍</div>
+                                    <div>
+                                        <div style="font-weight:700;">No 9 Ala Para, Vijayapura, Anuradhapura 50000</div>
+                                        <div style="font-size:var(--text-xs);color:var(--text-tertiary);">North Central Province, Sri Lanka</div>
+                                    </div>
+                                </div>
+                                <div style="display:flex;align-items:center;gap:var(--space-3);">
+                                    <div class="contact-info-icon" style="margin:0;">👤</div>
+                                    <div>
+                                        <div style="font-weight:700;">Owner: Saman Karunarathna</div>
+                                        <div style="font-size:var(--text-xs);color:var(--text-tertiary);">Chief Pharmacist: Dinusha Madhushani | Admin: Udheera Abhinidu</div>
+                                    </div>
+                                </div>
+                                <div style="display:flex;align-items:center;gap:var(--space-3);">
+                                    <div class="contact-info-icon" style="margin:0;">📞</div>
+                                    <div>
+                                        <div style="font-weight:700;">0772073568</div>
+                                        <div style="font-size:var(--text-xs);color:var(--text-tertiary);">Direct Hotline & WhatsApp</div>
+                                    </div>
+                                </div>
+                                <div style="display:flex;align-items:center;gap:var(--space-3);">
+                                    <div class="contact-info-icon" style="margin:0;">✉️</div>
+                                    <div>
+                                        <div style="font-weight:700;">udheeraabhinidu95@gmail.com</div>
+                                        <div style="font-size:var(--text-xs);color:var(--text-tertiary);">Admin Gmail Active</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Real Anuradhapura Google Maps Embed -->
+                        <div class="map-container">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3947.669860309971!2d80.4108677!3d8.2930564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afcf53ca5dd7241%3A0xc275d905eded0717!2sUdira%20Pharmacy!5e0!3m2!1sen!2slk!4v1700000000000!5m2!1sen!2slk" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border:none;padding-top:0;">
+                <span>&copy; 2024 UDIRA PHARMACY & GROCERY. All rights reserved.</span>
+                <div class="footer-bottom-links"><a href="index.html">Home</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast-container" id="toastContainer"></div>
+    <script src="app.js"></script>
+</body>
+</html>

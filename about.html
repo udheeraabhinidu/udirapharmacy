@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about UDIRA PHARMACY — our story, vision, mission, and expert team serving Sri Lanka with premium healthcare.">
+    <title>About Us — UDIRA PHARMACY</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230ea5e9'/><text x='16' y='22' text-anchor='middle' fill='white' font-size='18' font-weight='bold'>U</text></svg>">
+</head>
+<body>
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-logo"><svg viewBox="0 0 100 100" fill="none"><defs><linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient></defs><rect x="10" y="10" width="80" height="80" rx="20" fill="url(#logoGrad)"/><path d="M50 25 L50 75 M35 50 L65 50" stroke="white" stroke-width="8" stroke-linecap="round"/></svg></div>
+        <div class="loading-spinner"></div>
+        <div class="loading-text">UDIRA PHARMACY</div>
+        <div class="loading-bar-track"><div class="loading-bar-fill"></div></div>
+    </div>
+    <canvas id="particles-canvas"></canvas>
+
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand"><div class="nav-brand-icon">U</div><div class="nav-brand-text">UDIRA <span>PHARMACY</span></div></a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="medicine-finder.html" class="nav-link">Medicine Finder</a>
+                <a href="prescription.html" class="nav-link">Prescriptions</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <div class="lang-switcher"><button class="lang-btn active" data-lang="en">EN</button><button class="lang-btn" data-lang="si">සිං</button><button class="lang-btn" data-lang="ta">தமி</button></div>
+                <button class="theme-toggle" aria-label="Toggle light or dark theme" title="Toggle Light/Dark Theme">
+                    <span class="theme-icon icon-sun">☀️</span>
+                    <span class="theme-icon icon-moon">🌙</span>
+                </button>
+                <a href="login.html" class="btn btn-secondary btn-sm">Sign In</a>
+                <a href="admin.html" class="btn btn-primary btn-sm">Dashboard</a>
+                <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu"><div class="mobile-menu-close" id="mobileClose">&times;</div><a href="index.html" class="nav-link">Home</a><a href="about.html" class="nav-link active">About</a><a href="products.html" class="nav-link">Products</a><a href="contact.html" class="nav-link">Contact</a></div>
+
+    <main id="main-content" style="padding-top:100px;">
+        <!-- Hero -->
+        <section class="section" style="padding-top:var(--space-8);">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="section-badge">🏥 About Us</div>
+                    <h1 class="section-title">About UDIRA PHARMACY</h1>
+                    <p class="section-subtitle">Your trusted healthcare partner, serving Sri Lanka with excellence and compassion</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company Story -->
+        <section class="section" style="padding-top:0;">
+            <div class="container">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;" class="animate-on-scroll">
+                    <div>
+                        <h2 style="font-size:var(--text-3xl);margin-bottom:var(--space-6);">Our <span class="text-gradient">Story</span></h2>
+                        <p style="color:var(--text-secondary);line-height:var(--leading-relaxed);margin-bottom:var(--space-4);">
+                            UDIRA PHARMACY was founded with a simple yet powerful vision — to make quality healthcare 
+                            accessible to every Sri Lankan family. Under the dedicated leadership of <strong style="color:var(--text-primary);">Saman Karunarathna</strong>, 
+                            our pharmacy has grown into one of the most trusted healthcare providers in the region.
+                        </p>
+                        <p style="color:var(--text-secondary);line-height:var(--leading-relaxed);margin-bottom:var(--space-4);">
+                            With our Chief Pharmacist <strong style="color:var(--text-primary);">Dinusha Madhushani</strong> leading our pharmaceutical team, 
+                            we ensure that every customer receives expert guidance and the highest quality medicines. Our commitment 
+                            to excellence has earned us the trust of thousands of families across Sri Lanka.
+                        </p>
+                        <p style="color:var(--text-secondary);line-height:var(--leading-relaxed);">
+                            As we look to the future, our Administrator <strong style="color:var(--text-primary);">Udheera Abhinidu</strong> is driving 
+                            digital transformation to bring our pharmacy services into the modern era, making healthcare more 
+                            convenient and accessible than ever before.
+                        </p>
+                    </div>
+                    <div class="card-glass" style="padding:var(--space-10);text-align:center;">
+                        <svg viewBox="0 0 200 200" width="180" height="180" fill="none" style="margin:0 auto;">
+                            <defs><linearGradient id="aboutGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.8"/><stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.8"/></linearGradient></defs>
+                            <circle cx="100" cy="100" r="90" stroke="url(#aboutGrad)" stroke-width="2" fill="none" opacity="0.3"/>
+                            <circle cx="100" cy="100" r="70" stroke="url(#aboutGrad)" stroke-width="2" fill="none" opacity="0.2"/>
+                            <path d="M100 50 L100 150 M60 100 L140 100" stroke="url(#aboutGrad)" stroke-width="8" stroke-linecap="round"/>
+                        </svg>
+                        <h3 style="margin-top:var(--space-6);font-size:var(--text-2xl);">Since 2010</h3>
+                        <p style="color:var(--text-tertiary);margin-top:var(--space-2);">Caring for Sri Lanka's Health</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision & Mission -->
+        <section class="section">
+            <div class="container">
+                <div class="grid-2" style="gap:var(--space-8);">
+                    <div class="card-glass animate-on-scroll" style="text-align:center;">
+                        <div style="width:72px;height:72px;background:var(--primary-100);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-6);font-size:2rem;">🎯</div>
+                        <h3 style="font-size:var(--text-2xl);margin-bottom:var(--space-4);">Our Vision</h3>
+                        <p style="color:var(--text-secondary);line-height:var(--leading-relaxed);">
+                            To be Sri Lanka's leading pharmacy ecosystem, setting the gold standard for pharmaceutical care, 
+                            accessibility, and innovation. We envision a future where quality healthcare is within everyone's reach.
+                        </p>
+                    </div>
+                    <div class="card-glass animate-on-scroll animate-delay-1" style="text-align:center;">
+                        <div style="width:72px;height:72px;background:rgba(139,92,246,0.1);border-radius:var(--radius-xl);display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-6);font-size:2rem;">💎</div>
+                        <h3 style="font-size:var(--text-2xl);margin-bottom:var(--space-4);">Our Mission</h3>
+                        <p style="color:var(--text-secondary);line-height:var(--leading-relaxed);">
+                            To provide genuine, high-quality medicines at fair prices, offer expert pharmaceutical consultations, 
+                            and deliver an exceptional customer experience through modern technology and compassionate care.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="section-badge">👥 Our Team</div>
+                    <h2 class="section-title">Meet Our Experts</h2>
+                    <p class="section-subtitle">The dedicated professionals behind UDIRA PHARMACY</p>
+                </div>
+                <div class="grid-3">
+                    <div class="card-glass animate-on-scroll" style="text-align:center;padding:var(--space-8);">
+                        <div style="width:100px;height:100px;background:var(--gradient-primary);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-5);font-size:2.5rem;color:white;font-weight:800;">SK</div>
+                        <h4 style="font-size:var(--text-xl);">Saman Karunarathna</h4>
+                        <p style="color:var(--primary-light);font-weight:600;margin:var(--space-2) 0;">Owner & Founder</p>
+                        <p style="color:var(--text-secondary);font-size:var(--text-sm);line-height:var(--leading-relaxed);">
+                            Visionary leader who founded UDIRA PHARMACY with a commitment to bringing quality healthcare to every community.
+                        </p>
+                    </div>
+                    <div class="card-glass animate-on-scroll animate-delay-1" style="text-align:center;padding:var(--space-8);">
+                        <div style="width:100px;height:100px;background:var(--gradient-secondary);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-5);font-size:2.5rem;color:white;font-weight:800;">DM</div>
+                        <h4 style="font-size:var(--text-xl);">Dinusha Madhushani</h4>
+                        <p style="color:var(--secondary-light);font-weight:600;margin:var(--space-2) 0;">Chief Pharmacist</p>
+                        <p style="color:var(--text-secondary);font-size:var(--text-sm);line-height:var(--leading-relaxed);">
+                            Certified pharmacist with extensive experience in pharmaceutical care, medication management, and patient consultation.
+                        </p>
+                    </div>
+                    <div class="card-glass animate-on-scroll animate-delay-2" style="text-align:center;padding:var(--space-8);">
+                        <div style="width:100px;height:100px;background:var(--gradient-accent);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-5);font-size:2.5rem;color:white;font-weight:800;">UA</div>
+                        <h4 style="font-size:var(--text-xl);">Udheera Abhinidu</h4>
+                        <p style="color:var(--accent-light);font-weight:600;margin:var(--space-2) 0;">Administrator</p>
+                        <p style="color:var(--text-secondary);font-size:var(--text-sm);line-height:var(--leading-relaxed);">
+                            Technology-driven administrator spearheading the digital transformation of UDIRA PHARMACY's operations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="section-badge">✨ Our Values</div>
+                    <h2 class="section-title">What We Stand For</h2>
+                </div>
+                <div class="grid-4">
+                    <div class="card animate-on-scroll" style="text-align:center;">
+                        <div style="font-size:2.5rem;margin-bottom:var(--space-4);">🔬</div>
+                        <h4 style="margin-bottom:var(--space-3);">Quality</h4>
+                        <p style="font-size:var(--text-sm);color:var(--text-secondary);">Only genuine, quality-assured medicines from trusted manufacturers</p>
+                    </div>
+                    <div class="card animate-on-scroll animate-delay-1" style="text-align:center;">
+                        <div style="font-size:2.5rem;margin-bottom:var(--space-4);">❤️</div>
+                        <h4 style="margin-bottom:var(--space-3);">Care</h4>
+                        <p style="font-size:var(--text-sm);color:var(--text-secondary);">Compassionate, personalized care for every customer</p>
+                    </div>
+                    <div class="card animate-on-scroll animate-delay-2" style="text-align:center;">
+                        <div style="font-size:2.5rem;margin-bottom:var(--space-4);">🤝</div>
+                        <h4 style="margin-bottom:var(--space-3);">Trust</h4>
+                        <p style="font-size:var(--text-sm);color:var(--text-secondary);">Building lasting relationships through transparency and honesty</p>
+                    </div>
+                    <div class="card animate-on-scroll animate-delay-3" style="text-align:center;">
+                        <div style="font-size:2.5rem;margin-bottom:var(--space-4);">🚀</div>
+                        <h4 style="margin-bottom:var(--space-3);">Innovation</h4>
+                        <p style="font-size:var(--text-sm);color:var(--text-secondary);">Embracing technology to deliver better healthcare solutions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pharmacy Info -->
+        <section class="section">
+            <div class="container">
+                <div class="card-glass animate-on-scroll" style="padding:var(--space-10);">
+                    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--space-8);text-align:center;">
+                        <div>
+                            <div style="font-size:2rem;margin-bottom:var(--space-3);">📋</div>
+                            <h4 style="margin-bottom:var(--space-2);">Licensed & Certified</h4>
+                            <p style="font-size:var(--text-sm);color:var(--text-secondary);">Fully licensed pharmacy operating under Sri Lanka's pharmaceutical regulations</p>
+                        </div>
+                        <div>
+                            <div style="font-size:2rem;margin-bottom:var(--space-3);">🏆</div>
+                            <h4 style="margin-bottom:var(--space-2);">15+ Years of Service</h4>
+                            <p style="font-size:var(--text-sm);color:var(--text-secondary);">Over a decade of dedicated healthcare service to the community</p>
+                        </div>
+                        <div>
+                            <div style="font-size:2rem;margin-bottom:var(--space-3);">🌍</div>
+                            <h4 style="margin-bottom:var(--space-2);">Future-Ready</h4>
+                            <p style="font-size:var(--text-sm);color:var(--text-secondary);">Preparing for multi-branch expansion and mobile app services</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border:none;padding-top:0;">
+                <span>&copy; 2024 UDIRA PHARMACY. All rights reserved.</span>
+                <div class="footer-bottom-links"><a href="index.html">Home</a><a href="contact.html">Contact</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast-container" id="toastContainer"></div>
+    <script src="app.js"></script>
+</body>
+</html>

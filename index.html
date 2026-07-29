@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="UDIRA PHARMACY — Premier healthcare and medicine platform in Sri Lanka. Owner: Saman Karunarathna, Chief Pharmacist: Dinusha Madhushani.">
+    <title>UDIRA PHARMACY — Premium Healthcare Partner | Sri Lanka</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230ea5e9'/><text x='16' y='22' text-anchor='middle' fill='white' font-size='18' font-weight='bold'>U</text></svg>">
+</head>
+<body>
+    <!-- PARTICLES -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand">
+                <div class="nav-brand-icon">U</div>
+                <div class="nav-brand-text">UDIRA <span>PHARMACY</span></div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active" id="navLinkHome">Home</a>
+                <a href="about.html" class="nav-link" id="navLinkAbout">About</a>
+                <a href="products.html" class="nav-link" id="navLinkProducts">Products</a>
+                <a href="medicine-finder.html" class="nav-link" id="navLinkFinder">Medicine Finder</a>
+                <a href="prescription.html" class="nav-link" id="navLinkPrescription">Prescriptions</a>
+                <a href="blog.html" class="nav-link" id="navLinkBlog">Blog</a>
+                <a href="contact.html" class="nav-link" id="navLinkContact">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="si">සිං</button>
+                    <button class="lang-btn" data-lang="ta">தமி</button>
+                </div>
+                <button class="theme-toggle" aria-label="Toggle light or dark theme" title="Toggle Light/Dark Theme">
+                    <span class="theme-icon icon-sun">☀️</span>
+                    <span class="theme-icon icon-moon">🌙</span>
+                </button>
+                <a href="login.html" class="btn btn-secondary btn-sm">Sign In</a>
+                <a href="admin.html" class="btn btn-primary btn-sm">Dashboard</a>
+                <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-close" id="mobileClose">&times;</div>
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="products.html" class="nav-link">Products</a>
+        <a href="medicine-finder.html" class="nav-link">Medicine Finder</a>
+        <a href="prescription.html" class="nav-link">Prescriptions</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="login.html" class="nav-link">Sign In</a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main id="main-content">
+
+        <!-- HERO SECTION -->
+        <section class="hero" id="hero">
+            <div class="hero-bg"></div>
+            <div class="container" style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: center;">
+                <div class="hero-content reveal-left">
+                    <div class="hero-badge">
+                        <span class="pulse-dot"></span>
+                        <span data-i18n="hero_badge">Open Now — Serving Sri Lanka</span>
+                    </div>
+                    <h1 class="hero-title">
+                        <span data-i18n="hero_title_1">Your Trusted </span>
+                        <span class="highlight" data-i18n="hero_title_2">Healthcare</span>
+                        <span data-i18n="hero_title_3"> Partner</span>
+                    </h1>
+                    <p class="hero-description" data-i18n="hero_desc">
+                        Experience premium pharmaceutical care at UDIRA PHARMACY. Quality medicines, 
+                        expert guidance from Chief Pharmacist Dinusha Madhushani, and personalized health solutions.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="products.html" class="btn btn-primary btn-lg" id="btnBrowseMedicines">
+                            🔍 Browse Medicines
+                        </a>
+                        <a href="prescription.html" class="btn btn-secondary btn-lg" id="btnUploadPrescription">
+                            📄 Upload Prescription
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <div class="hero-stat-number" data-count="10000">10,000+</div>
+                            <div class="hero-stat-label" data-i18n="stat_medicines">Medicines Available</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number" data-count="5000">5,000+</div>
+                            <div class="hero-stat-label" data-i18n="stat_customers">Happy Customers</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-number" data-count="15">15+</div>
+                            <div class="hero-stat-label" data-i18n="stat_experience">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual reveal-right">
+                    <div style="width:100%;height:380px;background:linear-gradient(135deg, rgba(14,165,233,0.18), rgba(139,92,246,0.18));border-radius:var(--radius-2xl);border:1px solid var(--border-color);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;backdrop-filter:blur(20px);">
+                        <svg viewBox="0 0 200 200" width="180" height="180" fill="none">
+                            <defs>
+                                <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#0ea5e9"/>
+                                    <stop offset="100%" stop-color="#8b5cf6"/>
+                                </linearGradient>
+                            </defs>
+                            <rect x="40" y="20" width="120" height="160" rx="16" stroke="url(#heroGrad)" stroke-width="4" fill="none"/>
+                            <line x1="100" y1="60" x2="100" y2="140" stroke="url(#heroGrad)" stroke-width="12" stroke-linecap="round"/>
+                            <line x1="60" y1="100" x2="140" y2="100" stroke="url(#heroGrad)" stroke-width="12" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="hero-float-card card-1" style="display:flex;align-items:center;gap:0.75rem;">
+                        <div style="width:36px;height:36px;background:rgba(34,197,94,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--success);">✅</div>
+                        <div>
+                            <div style="font-weight:700;font-size:0.85rem;">Licensed Pharmacy</div>
+                            <div style="font-size:0.7rem;color:var(--text-tertiary);">Owner: Saman Karunarathna</div>
+                        </div>
+                    </div>
+                    <div class="hero-float-card card-2" style="display:flex;align-items:center;gap:0.75rem;">
+                        <div style="width:36px;height:36px;background:rgba(14,165,233,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--primary-light);">👩‍⚕️</div>
+                        <div>
+                            <div style="font-weight:700;font-size:0.85rem;">Chief Pharmacist</div>
+                            <div style="font-size:0.7rem;color:var(--text-tertiary);">Dinusha Madhushani</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEARCH BAR -->
+        <section class="section" style="padding:var(--space-8) 0;">
+            <div class="container">
+                <div class="search-box reveal-on-scroll" style="margin: 0 auto;">
+                    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    <input type="text" id="globalSearch" placeholder="Search medicines, vitamins, generic names...">
+                </div>
+                <div id="searchSuggestions" style="max-width:600px;margin:0.5rem auto 0;display:none;background:var(--bg-secondary);border:1px solid var(--border-color);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-xl);"></div>
+            </div>
+        </section>
+
+        <!-- CATEGORIES -->
+        <section class="section" id="categories">
+            <div class="container">
+                <div class="section-header reveal-on-scroll">
+                    <div class="section-badge">📦 Categories</div>
+                    <h2 class="section-title" id="catSectionTitle">Browse by Category</h2>
+                    <p class="section-subtitle" id="catSectionSubtitle">Find the right medicines organized by health categories</p>
+                </div>
+                <div class="grid-4 reveal-zoom" id="categoriesGrid">
+                    <!-- Rendered by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED PRODUCTS -->
+        <section class="section" id="featuredProducts">
+            <div class="container">
+                <div class="section-header reveal-on-scroll">
+                    <div class="section-badge">⭐ Featured</div>
+                    <h2 class="section-title" id="prodSectionTitle">Popular Medicines</h2>
+                    <p class="section-subtitle" id="prodSectionSubtitle">Most trusted and frequently purchased medicines</p>
+                </div>
+                <div class="grid-4 reveal-on-scroll" id="productsGrid">
+                    <!-- Rendered by JS -->
+                </div>
+                <div style="text-align: center; margin-top: var(--space-8);" class="reveal-on-scroll">
+                    <a href="products.html" class="btn btn-outline btn-lg">View All Products →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROMO BANNER -->
+        <section class="section">
+            <div class="container">
+                <div class="promo-banner reveal-zoom">
+                    <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;align-items:center;">
+                        <div>
+                            <div class="promo-tag" data-i18n="promo_tag">🔥 Limited Time Offer</div>
+                            <h3 class="promo-title" data-i18n="promo_title">Up to 25% OFF on Wellness Products</h3>
+                            <p class="promo-desc" data-i18n="promo_desc">Get amazing discounts on vitamins, supplements, and health essentials at UDIRA PHARMACY!</p>
+                            <div class="countdown">
+                                <div><div class="countdown-number" id="countDays">07</div><div class="countdown-label">Days</div></div>
+                                <div><div class="countdown-number" id="countHours">14</div><div class="countdown-label">Hours</div></div>
+                                <div><div class="countdown-number" id="countMins">32</div><div class="countdown-label">Mins</div></div>
+                                <div><div class="countdown-number" id="countSecs">48</div><div class="countdown-label">Secs</div></div>
+                            </div>
+                            <a href="products.html" class="btn" style="background:white;color:var(--gray-900);font-weight:700;">Shop Now →</a>
+                        </div>
+                        <div style="display:flex;align-items:center;justify-content:center;">
+                            <div style="width:200px;height:200px;background:rgba(255,255,255,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:3.5rem;font-weight:900;font-family:var(--font-display);color:white;border:2px solid rgba(255,255,255,0.3);" class="floating-element">
+                                25%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS SECTION -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card reveal-on-scroll delay-1">
+                        <div class="stat-icon blue">💊</div>
+                        <div class="stat-number" data-count="10000">10,000+</div>
+                        <div class="stat-label" data-i18n="stat_medicines">Medicines Available</div>
+                    </div>
+                    <div class="stat-card reveal-on-scroll delay-2">
+                        <div class="stat-icon purple">👥</div>
+                        <div class="stat-number" data-count="5000">5,000+</div>
+                        <div class="stat-label" data-i18n="stat_customers">Happy Customers</div>
+                    </div>
+                    <div class="stat-card reveal-on-scroll delay-3">
+                        <div class="stat-icon green">✅</div>
+                        <div class="stat-number" data-count="50000">50,000+</div>
+                        <div class="stat-label" data-i18n="stat_prescriptions">Prescriptions Filled</div>
+                    </div>
+                    <div class="stat-card reveal-on-scroll delay-4">
+                        <div class="stat-icon orange">🏆</div>
+                        <div class="stat-number" data-count="15">15+</div>
+                        <div class="stat-label" data-i18n="stat_experience">Years of Excellence</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REAL FACEBOOK REVIEWS SECTION (6 REVIEWS) -->
+        <section class="section" id="testimonials">
+            <div class="container">
+                <div class="section-header reveal-on-scroll">
+                    <div class="section-badge">💬 Facebook Feedback</div>
+                    <h2 class="section-title" id="testiSectionTitle">Facebook Reviews & Feedback</h2>
+                    <p class="section-subtitle" id="testiSectionSubtitle">Real feedback from our customers across Sri Lanka</p>
+                </div>
+                <div class="grid-3 reveal-on-scroll" id="testimonialsGrid">
+                    <!-- Rendered by app.js (6 Facebook Reviews) -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT PREVIEW -->
+        <section class="section">
+            <div class="container">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;">
+                    <div class="reveal-left">
+                        <div class="section-badge">About Us</div>
+                        <h2 style="font-size:var(--text-3xl);margin-bottom:var(--space-4);">
+                            <span data-i18n="about_title_1">Your Health, </span>
+                            <span class="text-gradient" data-i18n="about_title_2">Our Priority</span>
+                        </h2>
+                        <p style="color:var(--text-secondary);line-height:var(--leading-relaxed);margin-bottom:var(--space-6);" data-i18n="about_desc">
+                            UDIRA PHARMACY has been serving the people of Sri Lanka under the dedicated ownership of 
+                            Saman Karunarathna and expert care of Chief Pharmacist Dinusha Madhushani.
+                        </p>
+                        <a href="about.html" class="btn btn-primary">Learn More About Us →</a>
+                    </div>
+                    <div class="card-glass reveal-right" style="padding:var(--space-8);text-align:center;">
+                        <h3 style="font-size:var(--text-2xl);color:var(--primary-light);">UDIRA PHARMACY</h3>
+                        <p style="color:var(--text-secondary);margin-top:var(--space-2);">Administrator: Udheera Abhinidu</p>
+                        <p style="color:var(--text-tertiary);margin-top:var(--space-1);">Hotline: 0772073568</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BRANDS -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header reveal-on-scroll">
+                    <div class="section-badge">🏢 Trusted Partners</div>
+                    <h2 class="section-title">Featured Brands</h2>
+                </div>
+                <div class="grid-4 reveal-zoom" id="brandsGrid">
+                    <!-- Rendered by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT PREVIEW -->
+        <section class="section">
+            <div class="container">
+                <div class="card-glass reveal-zoom" style="padding:var(--space-8);text-align:center;">
+                    <h2 style="font-size:var(--text-3xl);margin-bottom:var(--space-3);">Have Questions?</h2>
+                    <p style="color:var(--text-secondary);margin-bottom:var(--space-6);">Contact Chief Pharmacist Dinusha & team directly for fast advice.</p>
+                    <div style="display:flex;justify-content:center;gap:var(--space-4);">
+                        <a href="contact.html" class="btn btn-primary btn-lg">Contact Us Now →</a>
+                        <a href="tel:0772073568" class="btn btn-secondary btn-lg">📞 0772073568</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="nav-brand" style="margin-bottom:var(--space-3);display:inline-flex;">
+                        <div class="nav-brand-icon">U</div>
+                        <div class="nav-brand-text">UDIRA <span>PHARMACY</span></div>
+                    </a>
+                    <p style="color:var(--text-secondary);font-size:var(--text-xs);line-height:var(--leading-relaxed);">
+                        Your trusted healthcare partner in Sri Lanka. Owner: Saman Karunarathna. Chief Pharmacist: Dinusha Madhushani. Admin: Udheera Abhinidu.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="medicine-finder.html">Medicine Finder</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="prescription.html">Upload Prescription</a></li>
+                        <li><a href="blog.html">Health Blog</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Contact Info</h4>
+                    <div class="footer-contact-item">📍 Sri Lanka</div>
+                    <div class="footer-contact-item">📞 0772073568</div>
+                    <div class="footer-contact-item">✉️ udheeraabhinidu95@gmail.com</div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 UDIRA PHARMACY. All rights reserved.</span>
+                <div class="footer-bottom-links"><a href="contact.html">Support</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast-container" id="toastContainer"></div>
+    <script src="app.js"></script>
+</body>
+</html>

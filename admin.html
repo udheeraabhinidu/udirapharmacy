@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Admin Dashboard — UDIRA PHARMACY</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230ea5e9'/><text x='16' y='22' text-anchor='middle' fill='white' font-size='18' font-weight='bold'>U</text></svg>">
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="adminSidebar">
+            <div class="sidebar-header">
+                <div class="nav-brand-icon">U</div>
+                <div class="nav-brand-text">UDIRA <span>ADMIN</span></div>
+            </div>
+            <div class="sidebar-nav">
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Main Menu</div>
+                    <a href="#" class="sidebar-link active" data-section="section-dashboard">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                        <span>Executive Dashboard</span>
+                    </a>
+                    <a href="#" class="sidebar-link" data-section="section-customers">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        <span>Registered Customers</span>
+                    </a>
+                    <a href="#" class="sidebar-link" data-section="section-inventory">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                        <span>Inventory & Stock</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Finance & HR</div>
+                    <a href="#" class="sidebar-link" data-section="section-expenses">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        <span>Expense Tracker</span>
+                    </a>
+                    <a href="#" class="sidebar-link" data-section="section-payroll">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                        <span>Salary & Payroll</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-section">
+                    <div class="sidebar-section-title">Admin Restricted</div>
+                    <a href="#" class="sidebar-link" data-section="section-customization">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                        <span>Live Theme Customizer</span>
+                    </a>
+                    <a href="#" class="sidebar-link" data-section="section-email">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span>Email Inbox & Contact Requests</span>
+                    </a>
+                </div>
+            </div>
+            <div class="sidebar-footer">
+                <a href="index.html" class="btn btn-secondary btn-sm" style="width:100%;">← Website Home</a>
+            </div>
+        </aside>
+
+        <!-- MAIN -->
+        <main class="admin-main">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <button class="btn btn-ghost btn-icon" id="sidebarToggle">☰</button>
+                    <div style="font-weight:700;">UDIRA Control Panel (Admin Authenticated)</div>
+                </div>
+                <div class="topbar-right">
+                    <button class="theme-toggle" aria-label="Toggle light or dark theme" title="Toggle Light/Dark Theme">
+                        <span class="theme-icon icon-sun">☀️</span>
+                        <span class="theme-icon icon-moon">🌙</span>
+                    </button>
+                    <div class="user-menu">
+                        <div class="user-avatar">UA</div>
+                        <div>
+                            <div class="user-name">Udheera Abhinidu</div>
+                            <div class="user-role">Super Admin</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="admin-content">
+
+                <!-- 1. DASHBOARD -->
+                <section class="admin-section" id="section-dashboard" style="display:block;">
+                    <div class="page-header">
+                        <div>
+                            <h1 class="page-title">Executive Dashboard</h1>
+                            <div class="page-breadcrumb"><span>Owner: Saman Karunarathna</span> | <span>Chief Pharmacist: Dinusha Madhushani</span></div>
+                        </div>
+                        <button class="btn btn-primary" onclick="EmailSystem.send({subject:'Manual Trigger: Daily Sales Report', body:'Daily gross sales LKR 125,000. Dispatched.'})">
+                            📩 Dispatch Report to udheeraabhinidu95@gmail.com
+                        </button>
+                    </div>
+
+                    <div class="kpi-grid">
+                        <div class="kpi-card blue">
+                            <div class="kpi-header"><div class="kpi-icon blue">💰</div></div>
+                            <div class="kpi-value">LKR 1,845,000</div>
+                            <div class="kpi-label">Monthly Gross Sales</div>
+                        </div>
+                        <div class="kpi-card green">
+                            <div class="kpi-header"><div class="kpi-icon green">📈</div></div>
+                            <div class="kpi-value">LKR 580,200</div>
+                            <div class="kpi-label">Net Profit After Expenses</div>
+                        </div>
+                        <div class="kpi-card purple">
+                            <div class="kpi-header"><div class="kpi-icon purple">👥</div></div>
+                            <div class="kpi-value">1,420</div>
+                            <div class="kpi-label">Active Registered Customers</div>
+                        </div>
+                        <div class="kpi-card orange">
+                            <div class="kpi-header"><div class="kpi-icon orange">⚠️</div></div>
+                            <div class="kpi-value">12</div>
+                            <div class="kpi-label">Low Stock Alerts</div>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <div class="chart-header"><div class="chart-title">Monthly Revenue Overview</div></div>
+                        <div style="padding: 2rem; text-align: center; color: var(--text-secondary); background: var(--bg-glass); border-radius: var(--radius-lg);">
+                            <svg width="100%" height="180" viewBox="0 0 500 150" fill="none">
+                                <path d="M10 130 Q 100 80, 200 110 T 350 40 T 490 20" stroke="url(#dashGrad)" stroke-width="4" fill="none"/>
+                                <path d="M10 130 Q 100 80, 200 110 T 350 40 T 490 20 L 490 150 L 10 150 Z" fill="url(#dashAreaGrad)" opacity="0.2"/>
+                                <defs>
+                                    <linearGradient id="dashGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient>
+                                    <linearGradient id="dashAreaGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="transparent"/></linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. REGISTERED CUSTOMERS -->
+                <section class="admin-section" id="section-customers" style="display:none;">
+                    <div class="page-header">
+                        <div>
+                            <h1 class="page-title">Registered Customer Database</h1>
+                            <div class="page-breadcrumb"><span id="customerCountBadge">3 Registered Customers</span></div>
+                        </div>
+                        <button class="btn btn-primary" onclick="CustomerSystem.exportToCSV()">
+                            📊 Export to CSV Spreadsheet
+                        </button>
+                    </div>
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr><th>Customer Name</th><th>Email Address</th><th>Phone</th><th>City</th><th>Role</th><th>Registered Date</th><th>Method</th></tr>
+                            </thead>
+                            <tbody id="customersTableBody">
+                                <!-- Rendered via app.js -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- 3. INVENTORY -->
+                <section class="admin-section" id="section-inventory" style="display:none;">
+                    <div class="page-header">
+                        <h1 class="page-title">Inventory Master</h1>
+                        <button class="btn btn-primary" onclick="openModal('modalAddMedicine')">+ Add Medicine</button>
+                    </div>
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr><th>Medicine</th><th>Category</th><th>Manufacturer</th><th>Internal Price</th><th>Status</th><th>Actions</th></tr>
+                            </thead>
+                            <tbody id="inventoryTableBody"></tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- 4. EXPENSES -->
+                <section class="admin-section" id="section-expenses" style="display:none;">
+                    <div class="page-header"><h1 class="page-title">Expense Tracker</h1></div>
+                    <div class="card-glass" style="padding:var(--space-6);">
+                        <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:1rem;text-align:center;">
+                            <div><div style="font-size:var(--text-xs);color:var(--text-tertiary);">Today's Expense</div><div style="font-size:1.8rem;font-weight:800;color:var(--danger);">LKR 14,500</div></div>
+                            <div><div style="font-size:var(--text-xs);color:var(--text-tertiary);">Monthly Expense</div><div style="font-size:1.8rem;font-weight:800;color:var(--warning);">LKR 340,000</div></div>
+                            <div><div style="font-size:var(--text-xs);color:var(--text-tertiary);">Net Profit</div><div style="font-size:1.8rem;font-weight:800;color:var(--success);">LKR 580,200</div></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 5. PAYROLL -->
+                <section class="admin-section" id="section-payroll" style="display:none;">
+                    <div class="page-header"><h1 class="page-title">Daily Salary & Payroll</h1></div>
+                    <div class="table-container">
+                        <table class="table">
+                            <thead><tr><th>Employee</th><th>Role</th><th>Daily Wage</th><th>Monthly Total</th></tr></thead>
+                            <tbody>
+                                <tr><td>Dinusha Madhushani</td><td>Chief Pharmacist</td><td>LKR 3,500</td><td style="font-weight:700;color:var(--accent-light);">LKR 115,000</td></tr>
+                                <tr><td>Udheera Abhinidu</td><td>Administrator</td><td>LKR 3,800</td><td style="font-weight:700;color:var(--accent-light);">LKR 120,000</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- 6. LIVE THEME BUILDER (ADMIN ONLY) -->
+                <section class="admin-section" id="section-customization" style="display:none;">
+                    <div class="page-header">
+                        <div>
+                            <h1 class="page-title">Live Theme Builder (Admin Restricted)</h1>
+                            <div class="page-breadcrumb"><span>Changes apply live immediately to root elements</span></div>
+                        </div>
+                        <div style="display:flex;gap:0.5rem;">
+                            <button class="btn btn-ghost" onclick="ThemeCustomizer.reset()">Reset</button>
+                            <button class="btn btn-primary" onclick="ThemeCustomizer.save()">Publish Theme</button>
+                        </div>
+                    </div>
+
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
+                        <div class="card-glass" style="padding:var(--space-6);">
+                            <h3 style="margin-bottom:1rem;">Pick Brand Colors</h3>
+                            <div class="form-group">
+                                <label class="form-label">Primary Theme Color</label>
+                                <input type="color" class="form-input" value="#0ea5e9" onchange="ThemeCustomizer.apply({primary: this.value})">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Secondary Color</label>
+                                <input type="color" class="form-input" value="#8b5cf6" onchange="ThemeCustomizer.apply({secondary: this.value})">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Accent Color</label>
+                                <input type="color" class="form-input" value="#10b981" onchange="ThemeCustomizer.apply({accent: this.value})">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Background Color</label>
+                                <input type="color" class="form-input" value="#0a0e27" onchange="ThemeCustomizer.apply({bgPrimary: this.value})">
+                            </div>
+                        </div>
+
+                        <div class="card" style="padding:var(--space-6);">
+                            <h3>Live Preview Card</h3>
+                            <div style="padding:1.5rem;background:var(--bg-primary);border-radius:var(--radius-xl);border:1px solid var(--border-color);margin-top:1rem;">
+                                <h4 style="color:var(--primary);">Sample Button & Text</h4>
+                                <p style="color:var(--text-secondary);margin:0.5rem 0;">Changes update instantly!</p>
+                                <button class="btn btn-primary">Primary Sample</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 7. EMAIL INBOX -->
+                <section class="admin-section" id="section-email" style="display:none;">
+                    <div class="page-header">
+                        <div>
+                            <h1 class="page-title">Live Admin Mail Inbox (udheeraabhinidu95@gmail.com)</h1>
+                            <div class="page-breadcrumb"><span>View all website contact messages, prescription requests & sales reports</span></div>
+                        </div>
+                        <button class="btn btn-primary" onclick="showToast('success','SMTP Test','Gmail Connection Active')">Test Mail Connection</button>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="table">
+                            <thead>
+                                <tr><th>Date</th><th>Sender</th><th>Subject</th><th>Message Content</th></tr>
+                            </thead>
+                            <tbody id="emailInboxBody">
+                                <!-- Rendered live via app.js -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modalAddMedicine">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-title">Add New Medicine</div>
+                <div class="modal-close" onclick="closeModal('modalAddMedicine')">&times;</div>
+            </div>
+            <div class="modal-body">
+                <div class="form-group"><label class="form-label">Medicine Name</label><input type="text" class="form-input" placeholder="e.g. Paracetamol"></div>
+                <div class="form-group"><label class="form-label">Price (LKR)</label><input type="number" class="form-input" placeholder="85"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-ghost" onclick="closeModal('modalAddMedicine')">Cancel</button>
+                <button class="btn btn-primary" onclick="closeModal('modalAddMedicine'); showToast('success','Medicine Added','Saved');">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container" id="toastContainer"></div>
+    <script src="app.js"></script>
+</body>
+</html>

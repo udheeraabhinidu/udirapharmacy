@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Advanced Medicine Finder — Search medicines by name, barcode, manufacturer, category, or symptom at UDIRA PHARMACY.">
+    <title>Medicine Finder — UDIRA PHARMACY</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230ea5e9'/><text x='16' y='22' text-anchor='middle' fill='white' font-size='18' font-weight='bold'>U</text></svg>">
+</head>
+<body>
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-logo"><svg viewBox="0 0 100 100" fill="none"><defs><linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient></defs><rect x="10" y="10" width="80" height="80" rx="20" fill="url(#logoGrad)"/><path d="M50 25 L50 75 M35 50 L65 50" stroke="white" stroke-width="8" stroke-linecap="round"/></svg></div>
+        <div class="loading-spinner"></div>
+        <div class="loading-text">UDIRA PHARMACY</div>
+        <div class="loading-bar-track"><div class="loading-bar-fill"></div></div>
+    </div>
+    <canvas id="particles-canvas"></canvas>
+
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand"><div class="nav-brand-icon">U</div><div class="nav-brand-text">UDIRA <span>PHARMACY</span></div></a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="medicine-finder.html" class="nav-link active">Medicine Finder</a>
+                <a href="prescription.html" class="nav-link">Prescriptions</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <div class="lang-switcher"><button class="lang-btn active" data-lang="en">EN</button><button class="lang-btn" data-lang="si">සිං</button><button class="lang-btn" data-lang="ta">தமி</button></div>
+                <button class="theme-toggle" aria-label="Toggle light or dark theme" title="Toggle Light/Dark Theme">
+                    <span class="theme-icon icon-sun">☀️</span>
+                    <span class="theme-icon icon-moon">🌙</span>
+                </button>
+                <a href="login.html" class="btn btn-secondary btn-sm">Sign In</a>
+                <a href="admin.html" class="btn btn-primary btn-sm">Dashboard</a>
+                <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu"><div class="mobile-menu-close" id="mobileClose">&times;</div><a href="index.html" class="nav-link">Home</a><a href="medicine-finder.html" class="nav-link active">Medicine Finder</a><a href="contact.html" class="nav-link">Contact</a></div>
+
+    <main id="main-content" style="padding-top:100px;">
+        <section class="section" style="padding-top:var(--space-8);">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="section-badge">🔍 Advanced Finder</div>
+                    <h1 class="section-title">Smart Medicine Finder</h1>
+                    <p class="section-subtitle">Search by Name, Barcode, Manufacturer, Category, or Symptoms</p>
+                </div>
+
+                <div class="card-glass animate-on-scroll" style="padding:var(--space-8);max-width:900px;margin:0 auto var(--space-12);">
+                    <div class="tabs" style="margin-bottom:var(--space-6);width:100%;justify-content:center;">
+                        <button class="tab active" data-tab="tab-name">Name / Generic</button>
+                        <button class="tab" data-tab="tab-barcode">Barcode</button>
+                        <button class="tab" data-tab="tab-symptoms">Symptoms</button>
+                        <button class="tab" data-tab="tab-mfr">Manufacturer</button>
+                    </div>
+
+                    <!-- Search by Name -->
+                    <div class="tab-pane" id="tab-name" style="display:block;">
+                        <div class="form-group">
+                            <label class="form-label">Medicine or Generic Name</label>
+                            <input type="text" class="form-input" placeholder="e.g. Paracetamol, Amoxicillin, Cetirizine..." id="finderNameInput">
+                        </div>
+                    </div>
+
+                    <!-- Search by Barcode -->
+                    <div class="tab-pane" id="tab-barcode" style="display:none;">
+                        <div class="form-group">
+                            <label class="form-label">Scan or Enter Barcode / EAN</label>
+                            <div style="display:flex;gap:var(--space-3);">
+                                <input type="text" class="form-input" placeholder="e.g. 4791029384721" id="finderBarcodeInput">
+                                <button class="btn btn-secondary" onclick="showToast('info','Camera Scan','Barcode camera scanner initiated')">📷 Scan</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Search by Symptoms -->
+                    <div class="tab-pane" id="tab-symptoms" style="display:none;">
+                        <div class="form-group">
+                            <label class="form-label">Select or Type Symptoms</label>
+                            <select class="form-select" id="finderSymptomSelect">
+                                <option value="">Choose Symptom...</option>
+                                <option value="fever">Fever / High Temperature</option>
+                                <option value="pain">Headache / Body Pain</option>
+                                <option value="allergy">Allergies / Runny Nose</option>
+                                <option value="acid">Gastric / Acid Reflux</option>
+                                <option value="cough">Cough & Sore Throat</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Search by Manufacturer -->
+                    <div class="tab-pane" id="tab-mfr" style="display:none;">
+                        <div class="form-group">
+                            <label class="form-label">Pharmaceutical Manufacturer</label>
+                            <select class="form-select" id="finderMfrSelect">
+                                <option value="">Select Manufacturer...</option>
+                                <option value="State Pharmaceuticals">State Pharmaceuticals Corporation (SPC)</option>
+                                <option value="Astron Ltd">Astron Ltd</option>
+                                <option value="Hemas Pharma">Hemas Pharma</option>
+                                <option value="Pfizer">Pfizer</option>
+                                <option value="GSK">GSK</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-lg" style="width:100%;margin-top:var(--space-4);" onclick="showToast('success','Search Executed','Displaying relevant medicine matches')">
+                        Search Medicine Database →
+                    </button>
+                </div>
+
+                <!-- Results Section -->
+                <div class="section-header">
+                    <h2>Matching Medicines</h2>
+                </div>
+                <div class="grid-auto" id="productsGrid">
+                    <!-- Products -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border:none;padding-top:0;">
+                <span>&copy; 2024 UDIRA PHARMACY. All rights reserved.</span>
+                <div class="footer-bottom-links"><a href="index.html">Home</a><a href="contact.html">Contact</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast-container" id="toastContainer"></div>
+    <script src="app.js"></script>
+</body>
+</html>

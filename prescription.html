@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Upload your doctor's prescription securely to UDIRA PHARMACY for fast review and medicine preparation.">
+    <title>Upload Prescription — UDIRA PHARMACY</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230ea5e9'/><text x='16' y='22' text-anchor='middle' fill='white' font-size='18' font-weight='bold'>U</text></svg>">
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand"><div class="nav-brand-icon">U</div><div class="nav-brand-text">UDIRA <span>PHARMACY</span></div></a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="medicine-finder.html" class="nav-link">Medicine Finder</a>
+                <a href="prescription.html" class="nav-link active">Prescriptions</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <div class="lang-switcher"><button class="lang-btn active" data-lang="en">EN</button><button class="lang-btn" data-lang="si">සිං</button><button class="lang-btn" data-lang="ta">தமி</button></div>
+                <button class="theme-toggle" aria-label="Toggle light or dark theme" title="Toggle Light/Dark Theme">
+                    <span class="theme-icon icon-sun">☀️</span>
+                    <span class="theme-icon icon-moon">🌙</span>
+                </button>
+                <a href="login.html" class="btn btn-secondary btn-sm">Sign In</a>
+                <a href="admin.html" class="btn btn-primary btn-sm">Dashboard</a>
+                <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu"><div class="mobile-menu-close" id="mobileClose">&times;</div><a href="index.html" class="nav-link">Home</a><a href="prescription.html" class="nav-link active">Prescriptions</a><a href="contact.html" class="nav-link">Contact</a></div>
+
+    <main id="main-content" style="padding-top:100px;">
+        <section class="section" style="padding-top:var(--space-8);">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <div class="section-badge">📄 Prescription Service</div>
+                    <h1 class="section-title">Upload Doctor's Prescription</h1>
+                    <p class="section-subtitle">Chief Pharmacist Dinusha Madhushani & team will verify and prepare your medicines</p>
+                </div>
+
+                <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:var(--space-8);align-items:start;">
+                    <!-- Upload Card -->
+                    <div class="card-glass animate-on-scroll" style="padding:var(--space-8);">
+                        <h3 style="margin-bottom:var(--space-4);">Send Prescription to udheeraabhinidu95@gmail.com</h3>
+                        
+                        <div class="upload-zone" id="uploadZone" onclick="document.getElementById('prescriptionFile').click()">
+                            <div class="upload-icon">📄</div>
+                            <div class="upload-title">Click or Drag & Drop prescription here</div>
+                            <div class="upload-subtitle">Supports JPG, PNG, PDF up to 10MB</div>
+                            <input type="file" id="prescriptionFile" style="display:none;" accept="image/*,.pdf" onchange="showToast('info','File Selected', this.files[0] ? this.files[0].name : '')">
+                        </div>
+
+                        <div style="margin-top:var(--space-6);">
+                            <div class="form-group">
+                                <label class="form-label">Patient Full Name</label>
+                                <input type="text" id="prescPatientName" class="form-input" placeholder="e.g. Saman Kumara" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Phone Number (Sri Lanka)</label>
+                                <input type="tel" id="prescPhone" class="form-input" placeholder="077XXXXXXX" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Special Instructions / Notes</label>
+                                <textarea id="prescNotes" class="form-textarea" placeholder="e.g. Need 30 days supply, generic alternative acceptable..."></textarea>
+                            </div>
+                            <button class="btn btn-primary btn-lg" style="width:100%;" onclick="submitPrescription()">
+                                📩 Send via Gmail (to udheeraabhinidu95@gmail.com) →
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Steps & Information -->
+                    <div class="animate-on-scroll animate-delay-1">
+                        <div class="card" style="margin-bottom:var(--space-6);">
+                            <h4 style="margin-bottom:var(--space-4);color:var(--primary-light);">How It Works</h4>
+                            <div style="display:flex;flex-direction:column;gap:var(--space-4);">
+                                <div style="display:flex;gap:var(--space-3);align-items:flex-start;">
+                                    <div style="width:32px;height:32px;background:var(--primary-100);color:var(--primary-light);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">1</div>
+                                    <div>
+                                        <div style="font-weight:600;">Fill Form & Attach Image</div>
+                                        <div style="font-size:var(--text-xs);color:var(--text-secondary);">Enter patient details and select your prescription photo</div>
+                                    </div>
+                                </div>
+                                <div style="display:flex;gap:var(--space-3);align-items:flex-start;">
+                                    <div style="width:32px;height:32px;background:var(--primary-100);color:var(--primary-light);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">2</div>
+                                    <div>
+                                        <div style="font-weight:600;">Send from Your Gmail</div>
+                                        <div style="font-size:var(--text-xs);color:var(--text-secondary);">Opens your Gmail pre-filled to udheeraabhinidu95@gmail.com</div>
+                                    </div>
+                                </div>
+                                <div style="display:flex;gap:var(--space-3);align-items:flex-start;">
+                                    <div style="width:32px;height:32px;background:var(--primary-100);color:var(--primary-light);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">3</div>
+                                    <div>
+                                        <div style="font-weight:600;">Pharmacist Verification</div>
+                                        <div style="font-size:var(--text-xs);color:var(--text-secondary);">Chief Pharmacist reviews dosage & stock availability</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Prescription Track Card -->
+                        <div class="card-glass" style="padding:var(--space-6);">
+                            <h4 style="margin-bottom:var(--space-3);">Track Existing Request</h4>
+                            <div class="form-group">
+                                <input type="text" class="form-input" placeholder="Enter Request Ref ID (e.g. RX-90412)">
+                            </div>
+                            <button class="btn btn-secondary" style="width:100%;" onclick="showToast('info','Status Check','Prescription RX-90412: Verified & Ready for Pickup')">Check Status</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border:none;padding-top:0;">
+                <span>&copy; 2026 UDIRA PHARMACY. All rights reserved.</span>
+                <div class="footer-bottom-links"><a href="index.html">Home</a><a href="contact.html">Contact</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast-container" id="toastContainer"></div>
+    <script src="app.js"></script>
+</body>
+</html>
